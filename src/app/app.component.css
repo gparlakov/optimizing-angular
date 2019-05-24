@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+
+app-menu {
+  flex: 1 100px;
+}
+.header {
+  flex-basis: 100%;
+}
+
+div.main-content {
+  flex: 1;
+}

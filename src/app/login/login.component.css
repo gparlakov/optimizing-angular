@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+}
+
+p-card {
+  margin: auto auto;
+
+}
+
+span {
+  margin-bottom: 1.5em;
+}

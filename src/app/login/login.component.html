@@ -1,3 +1,23 @@
-<p>
-  login works!
-</p>
+<p-card title="Login" [style]="{ width: '360px' }">
+  <form (submit)="onSubmit()" [formGroup]="form">
+    <span class="ui-float-label">
+      <input
+        id="username-input"
+        type="text"
+        pInputText
+        formControlName="userName"
+      />
+      <label for="username-input">Username</label>
+    </span>
+    <span class="ui-float-label">
+      <input
+        type="password"
+        pPassword
+        formControlName="password"
+        id="password-input"
+      />
+      <label for="password-input">Password</label>
+    </span>
+    <button type="submit" pButton style="display: block" label="Login"></button>
+  </form>
+</p-card>
