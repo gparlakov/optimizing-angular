@@ -6,9 +6,8 @@ import { PersonalComponent } from './personal.component';
 
 @NgModule({
   declarations: [PersonalComponent],
-  imports: [
-    CommonModule,
-    PersonalRoutingModule
-  ]
+  exports: [PersonalComponent],
+
+  imports: [CommonModule, PersonalRoutingModule]
 })
-export class PersonalModule { }
+export class PersonalModule {}
