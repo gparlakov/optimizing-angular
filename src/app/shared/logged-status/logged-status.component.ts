@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggedStatusService } from './logged-status.service';
 
 @Component({
   selector: 'app-logged-status',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoggedStatusComponent implements OnInit {
 
-  constructor() { }
+  constructor(public loggedService: LoggedStatusService) { }
 
   ngOnInit() {
   }

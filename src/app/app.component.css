@@ -2,13 +2,24 @@
   display: flex;
   flex-wrap: wrap;
   width: 100vw;
+  box-sizing: content-box;
 }
 
 app-menu {
-  flex: 1 100px;
+  flex: 0 100px;
 }
 .header {
   flex-basis: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.header app-logged-status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+  padding-right: 10px;
 }
 
 div.main-content {

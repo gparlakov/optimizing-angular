@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { LoggedStatusService } from '../shared/logged-status/logged-status.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
   form: FormGroup;
 
-  constructor() {
+  constructor(private loggedStatus: LoggedStatusService) {
     this.form = new FormGroup({
       userName: new FormControl(),
       password: new FormControl()
@@ -19,5 +20,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     console.log(this.form.value);
+    this.loggedStatus.onLogged(this.form.value.userName);
   }
 }

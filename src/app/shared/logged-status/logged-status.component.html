@@ -1,3 +1,2 @@
-<p>
-  logged-status works!
-</p>
+<span *ngIf="loggedService.status$ | async; else notLogged; let user"> Welcome {{ user }}</span>
+<ng-template #notLogged><span>Stranger...</span></ng-template>
