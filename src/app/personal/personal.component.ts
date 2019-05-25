@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { generateMnemonic } from 'bip39';
-import { Wallet } from 'ethers';
+
 @Component({
   selector: 'app-personal',
   templateUrl: './personal.component.html',
@@ -15,10 +14,14 @@ export class PersonalComponent implements OnInit {
   ngOnInit() {}
 
   createWallet() {
-    const mnemonic = generateMnemonic();
-    const wallet = Wallet.fromMnemonic(mnemonic);
-    this.generatedMnemonic = mnemonic;
-    this.walletAddress = wallet.address;
-    this.walletPrivateKey =  wallet.privateKey;
+    const bip39Import = import('bip39');
+    const ethersImport = import('ethers');
+    Promise.all([bip39Import, ethersImport]).then(([bip39, ethers]) => {
+      const mnemonic = bip39.generateMnemonic();
+      const wallet = ethers.Wallet.fromMnemonic(mnemonic);
+      this.generatedMnemonic = mnemonic;
+      this.walletAddress = wallet.address;
+      this.walletPrivateKey = wallet.privateKey;
+    });
   }
 }

@@ -6,7 +6,8 @@
     "baseUrl": "",
     "paths": {
       "stream": ["../node_modules/stream-browserify"]
-    }
+    },
+    "module": "esNext"
   },
   "exclude": ["test.ts", "**/*.spec.ts"]
 }
