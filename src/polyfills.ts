@@ -55,9 +55,16 @@
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js/dist/zone';  // Included with Angular CLI.
-
+import 'zone.js/dist/zone'; // Included with Angular CLI.
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+// bip39 expects to see global (like the node global?) so we shim it
+(window as any).global = (window as any).global || window;
+// then stream-browserify's dependency needs global.process
+(window as any).process = require('process');
+// and another dep needs the Buffer the same
+(window as any).Buffer = require('buffer').Buffer;
+  // (window as any).global.setTimeout = window.setTimeout;

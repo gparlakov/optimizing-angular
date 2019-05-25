@@ -1,3 +1,35 @@
-<p>
-  personal works!
-</p>
+<p-tabView>
+  <p-tabPanel [selected]="true" header="Change password">
+    <p-card title="Change my password">
+      <span class="ui-float-label">
+        <input type="password" pPassword />
+        <label>Current password</label>
+      </span>
+      <span class="ui-float-label">
+        <input type="password" pPassword />
+        <label>New password</label>
+      </span>
+      <button pButton (click)="success.innerText = 'created'" label="Change my password"></button>
+      <span #success></span>
+    </p-card>
+  </p-tabPanel>
+  <p-tabPanel  header="Change username">
+      <p-card title="Change my username">
+        <span class="ui-float-label">
+          <input type="text" pInputText />
+          <label>Change username to...</label>
+        </span>
+        <button pButton (click)="success.innerText = 'Changed'" label="Change my username"></button>
+        <span #success></span>
+      </p-card>
+    </p-tabPanel>
+  <p-tabPanel header="Create a wallet">
+    <p-card
+      title="Create me a wallet"
+      subtitle="When we create a wallet for you we'll show you your mnemonic. Please be ready to write that down as we'll not store it and will be unable to reproduce that for yoo. It's essentially your password."
+    >
+      <button pButton label="Create me a wallet!" (click)="createWallet()"></button>
+      <span *ngIf="generatedMnemonic">This is your mnemonic: {{ generatedMnemonic }}</span>
+    </p-card>
+  </p-tabPanel>
+</p-tabView>
