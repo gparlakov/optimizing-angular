@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { PersonalComponent } from './personal/personal.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'login', loadChildren: './login/login.module#LoginModule' },
-  { path: 'personal', loadChildren: './personal/personal.module#PersonalModule' },
+  { path: 'login', component: LoginComponent },
+  { path: 'personal', component: PersonalComponent },
   { path: '**', component: HomeComponent }
 ];
 
