@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
-import { SharedModule } from './shared/shared.module';
+import { MenuModule } from './shared/menu/menu.module';
+import { LoggedStatusModule } from './shared/logged-status/logged-status.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    SharedModule
+    LoggedStatusModule,
+    MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
